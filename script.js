@@ -13,13 +13,8 @@ const generateGrid = function(gridDims){
         divGridRow.setAttribute("class","smallcontainer");
         for(let j=0; j<gridDims; j++){
             const divGridColumn = document.createElement('div');
-            //divGridColumn.style.border = "blue";
             divGridColumn.setAttribute("id",`div_${i}_${j}`);
             divGridColumn.setAttribute("class","gridPixel");
-            //divGridColumn.setAttribute("style",`border: ${gridBorder};\
-            //                                    background: ${gridBackground};\
-            //                                    height: ${gridSize}px;\
-            //                                    width: ${gridSize}px`);
             divGridRow.appendChild(divGridColumn);
         }
         divGridRow.style.border = "red";
@@ -31,7 +26,7 @@ const etchPixel = function(){
     const pixels = document.querySelectorAll(".gridPixel");
     pixels.forEach((pixel) => {
         pixel.addEventListener("mouseenter", (event) =>{
-            console.log(event.target);
+            //console.log(event.target);
             event.target.classList.add('etched');
         });
     });
@@ -41,8 +36,6 @@ const promptUser = function(){
     let userInput = prompt("Enter N:");
     while(true){
         if(+userInput >= 1 && +userInput <= 100){
-            console.log(typeof +userInput);
-            console.log(+userInput);
             return +userInput;
         }
         else userInput = prompt("Enter N (1 <= N <= 100):");
@@ -57,11 +50,15 @@ const askGridDims = function(){
 
     let userInput;
     const buttonPrompt = document.querySelector("button");
-    buttonPrompt.addEventListener("click", (e) => {
+    buttonPrompt.addEventListener("click", () => {
+        let bigContainer = document.querySelector(".bigcontainer");
+        if (bigContainer) body.removeChild(bigContainer); // Check if the grid already exists
+
         userInput = promptUser();
         console.log(userInput);
         generateGrid(userInput);
         etchPixel();
+        console.log(body);
     });
 
 }
