@@ -1,8 +1,8 @@
 const generateGrid = function(){
     const gridDims = 20;
-    const gridSize = 20;
-    const gridBorder = "solid 1px black";
-    const gridBackground = "white";
+    //const gridSize = 20;
+    //const gridBorder = "solid 1px black";
+    //const gridBackground = "white";
 
     const body = document.querySelector('body');
     const divGrid = document.createElement('div');
@@ -15,10 +15,10 @@ const generateGrid = function(){
             //divGridColumn.style.border = "blue";
             divGridColumn.setAttribute("id",`div_${i}_${j}`);
             divGridColumn.setAttribute("class","gridPixel");
-            divGridColumn.setAttribute("style",`border: ${gridBorder};\
-                                                background: ${gridBackground};\
-                                                height: ${gridSize}px;\
-                                                width: ${gridSize}px`);
+            //divGridColumn.setAttribute("style",`border: ${gridBorder};\
+            //                                    background: ${gridBackground};\
+            //                                    height: ${gridSize}px;\
+            //                                    width: ${gridSize}px`);
             divGridRow.appendChild(divGridColumn);
         }
         divGridRow.style.border = "red";
@@ -30,7 +30,8 @@ const etchPixel = function(){
     const pixels = document.querySelectorAll(".gridPixel");
     pixels.forEach((pixel) => {
         pixel.addEventListener("mouseenter", (event) =>{
-            console.log(event.target.id);
+            console.log(event.target);
+            event.target.classList.add('etched');
         });
     });
 }
