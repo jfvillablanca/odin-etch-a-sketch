@@ -6,3 +6,11 @@
     font-family: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.bigcontainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.smallcontainer{
+    display: flex;
+}

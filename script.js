@@ -7,11 +7,14 @@ const generateGrid = function(){
     divGrid.setAttribute("class","bigcontainer");
     for(let i=0; i<gridDims; i++){
         const divGridRow = document.createElement('div');
+        divGrid.setAttribute("class","smallcontainer");
         for(let j=0; j<gridDims; j++){
             const divGridColumn = document.createElement('div');
             //divGridColumn.style.border = "blue";
             divGridColumn.setAttribute("id",`div_${i}_${j}`);
-            divGridColumn.setAttribute("style","background: blue");
+            divGridColumn.setAttribute("style","background: blue;\
+                                                height: 50px;\
+                                                width: 50px");
             divGridRow.appendChild(divGridColumn);
         }
         divGridRow.style.border = "red";
