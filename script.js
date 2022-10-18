@@ -22,12 +22,22 @@ const generateGrid = function(gridDims){
     }
     body.appendChild(divGrid);
 }
+const randomizeRGB = function(){
+
+}
 const etchPixel = function(){
     const pixels = document.querySelectorAll(".gridPixel");
     pixels.forEach((pixel) => {
         pixel.addEventListener("mouseenter", (event) =>{
-            //console.log(event.target);
             event.target.classList.add('etched');
+
+        /*
+         * randomizeRGB()
+         * store init RGB associated with pixel ID
+         * add hoverCounter++ as pixel class
+         *
+        */
+
         });
     });
 }
