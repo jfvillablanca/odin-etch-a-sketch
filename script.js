@@ -1,9 +1,11 @@
 const generateGrid = function(){
-    const gridDims = 4;
+    const gridDims = 20;
+    const gridSize = 20;
+    const gridBorder = "solid 1px black";
+    const gridBackground = "white";
+
     const body = document.querySelector('body');
     const divGrid = document.createElement('div');
-    divGrid.style.background = "rgb(0,153,102)";
-    divGrid.textContent = "I'm a grid";
     divGrid.setAttribute("class","bigcontainer");
     for(let i=0; i<gridDims; i++){
         const divGridRow = document.createElement('div');
@@ -12,9 +14,10 @@ const generateGrid = function(){
             const divGridColumn = document.createElement('div');
             //divGridColumn.style.border = "blue";
             divGridColumn.setAttribute("id",`div_${i}_${j}`);
-            divGridColumn.setAttribute("style","background: blue;\
-                                                height: 50px;\
-                                                width: 50px");
+            divGridColumn.setAttribute("style",`border: ${gridBorder};\
+                                                background: ${gridBackground};\
+                                                height: ${gridSize}px;\
+                                                width: ${gridSize}px`);
             divGridRow.appendChild(divGridColumn);
         }
         divGridRow.style.border = "red";
