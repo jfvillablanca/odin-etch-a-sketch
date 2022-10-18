@@ -1,5 +1,5 @@
 * {
-    border: 1px solid palevioletred;  
+    /*border: 1px solid palevioletred;  */
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
@@ -8,10 +8,10 @@
 html {
     width: 100%;
 }
-body {
+/*body {
     display: flex;
     justify-content: space-between;
-}
+}*/
 
 .bigcontainer{
     border: 1px solid cyan;  
@@ -38,8 +38,8 @@ body {
     width: 100%;
     border: solid 1px black;
     padding: 0px;
-    min-height: 20px;
-    min-width: 20px;
+    min-height: 5px;
+    min-width: 5px;
 }
 
 .gridPixel.etched{

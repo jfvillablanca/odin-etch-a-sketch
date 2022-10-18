@@ -1,5 +1,6 @@
-const generateGrid = function(){
-    const gridDims = 30;
+const generateGrid = function(gridDims){
+    console.log(`Generating ${gridDims} x ${gridDims} grid`);
+    //const gridDims = gridDims;
     //const gridSize = 20;
     //const gridBorder = "solid 1px black";
     //const gridBackground = "white";
@@ -24,9 +25,7 @@ const generateGrid = function(){
         divGridRow.style.border = "red";
         divGrid.appendChild(divGridRow);
     }
-    body.appendChild(document.createElement('div'));
     body.appendChild(divGrid);
-    body.appendChild(document.createElement('div'));
 }
 const etchPixel = function(){
     const pixels = document.querySelectorAll(".gridPixel");
@@ -38,9 +37,32 @@ const etchPixel = function(){
     });
 }
 
-//const askGridDims = function(){
-//
-//}
-//askGridDims();
-generateGrid();
-etchPixel();
+const promptUser = function(){
+    let userInput = prompt("Enter N:");
+    while(true){
+        if(+userInput >= 1 && +userInput <= 100){
+            console.log(typeof +userInput);
+            console.log(+userInput);
+            return +userInput;
+        }
+        else userInput = prompt("Enter N (1 <= N <= 100):");
+    }
+}
+
+const askGridDims = function(){
+    const body = document.querySelector('body');
+    const button = document.createElement('button');
+    button.textContent = "Enter N dimension for grid?";
+    body.appendChild(button);
+
+    let userInput;
+    const buttonPrompt = document.querySelector("button");
+    buttonPrompt.addEventListener("click", (e) => {
+        userInput = promptUser();
+        console.log(userInput);
+        generateGrid(userInput);
+        etchPixel();
+    });
+
+}
+askGridDims();
