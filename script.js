@@ -1,5 +1,5 @@
 const generateGrid = function(){
-    const gridDims = 20;
+    const gridDims = 30;
     //const gridSize = 20;
     //const gridBorder = "solid 1px black";
     //const gridBackground = "white";
@@ -9,7 +9,7 @@ const generateGrid = function(){
     divGrid.setAttribute("class","bigcontainer");
     for(let i=0; i<gridDims; i++){
         const divGridRow = document.createElement('div');
-        divGrid.setAttribute("class","smallcontainer");
+        divGridRow.setAttribute("class","smallcontainer");
         for(let j=0; j<gridDims; j++){
             const divGridColumn = document.createElement('div');
             //divGridColumn.style.border = "blue";
@@ -24,7 +24,9 @@ const generateGrid = function(){
         divGridRow.style.border = "red";
         divGrid.appendChild(divGridRow);
     }
+    body.appendChild(document.createElement('div'));
     body.appendChild(divGrid);
+    body.appendChild(document.createElement('div'));
 }
 const etchPixel = function(){
     const pixels = document.querySelectorAll(".gridPixel");
@@ -35,5 +37,10 @@ const etchPixel = function(){
         });
     });
 }
+
+//const askGridDims = function(){
+//
+//}
+//askGridDims();
 generateGrid();
 etchPixel();
