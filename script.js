@@ -45,7 +45,7 @@ const promptUser = function(){
 const askGridDims = function(){
     const body = document.querySelector('body');
     const button = document.createElement('button');
-    button.textContent = "Enter N dimension for grid?";
+    button.textContent = "Click here to enter N dimensions for grid";
     body.appendChild(button);
 
     let userInput;
@@ -58,7 +58,7 @@ const askGridDims = function(){
         console.log(userInput);
         generateGrid(userInput);
         etchPixel();
-        console.log(body);
+        button.textContent = "Want a new grid? Click to enter N dimensions";
     });
 
 }

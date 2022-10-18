@@ -8,10 +8,17 @@
 html {
     width: 100%;
 }
-/*body {
+body {
     display: flex;
-    justify-content: space-between;
-}*/
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    margin: 2%;
+    padding: 1em;
+    width: 25vw;
+}
 
 .bigcontainer{
     border: 1px solid cyan;  
