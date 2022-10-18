@@ -9,7 +9,9 @@ const generateGrid = function(){
         const divGridRow = document.createElement('div');
         for(let j=0; j<gridDims; j++){
             const divGridColumn = document.createElement('div');
-            divGridColumn.style.border = "blue";
+            //divGridColumn.style.border = "blue";
+            divGridColumn.setAttribute("id",`div_${i}_${j}`);
+            divGridColumn.setAttribute("style","background: blue");
             divGridRow.appendChild(divGridColumn);
         }
         divGridRow.style.border = "red";
