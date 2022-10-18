@@ -14,6 +14,7 @@ const generateGrid = function(){
             const divGridColumn = document.createElement('div');
             //divGridColumn.style.border = "blue";
             divGridColumn.setAttribute("id",`div_${i}_${j}`);
+            divGridColumn.setAttribute("class","gridPixel");
             divGridColumn.setAttribute("style",`border: ${gridBorder};\
                                                 background: ${gridBackground};\
                                                 height: ${gridSize}px;\
@@ -25,4 +26,13 @@ const generateGrid = function(){
     }
     body.appendChild(divGrid);
 }
+const etchPixel = function(){
+    const pixels = document.querySelectorAll(".gridPixel");
+    pixels.forEach((pixel) => {
+        pixel.addEventListener("mouseenter", (event) =>{
+            console.log(event.target.id);
+        });
+    });
+}
 generateGrid();
+etchPixel();
